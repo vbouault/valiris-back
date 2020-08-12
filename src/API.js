@@ -7,6 +7,7 @@ const API = axios.create({
 
 const placeTokenInRequestHeaders = (req) => {
   const token = localStorage.getItem('authToken')
+  req.headers['Access-Control-Allow-Origin'] = '*'
   if (token) {
     req.headers['Authorization'] = `Bearer ${token}`
   }
